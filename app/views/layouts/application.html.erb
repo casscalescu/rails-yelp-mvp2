@@ -5,11 +5,21 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <%= link_to "Rails Yelp MVP", restaurants_path, class: "navbar-brand" %>
+      <%= link_to "Home", restaurants_path, class: "nav-item nav-link active" %>
+      <%= link_to "Add a restaurant", restaurants_new_path, class: "nav-item nav-link" %>
+    </nav>
+
     <%= yield %>
   </body>
 </html>
